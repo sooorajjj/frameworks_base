@@ -3456,8 +3456,8 @@ public final class Settings {
          * Locale for secondary overlay on dialer for t9 search input
          * @hide
          */
-        public static final String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";
-		   
+        public static final String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";	   
+	   		            
         /**
          * Color temperature of the display during the day
          * @hide
@@ -3523,6 +3523,12 @@ public final class Settings {
          * @hide
          */
         public static final String NAVIGATION_BAR_TINT = "navigation_bar_tint";
+		
+		/**
+         * Enable/Disable screenshot sound
+         * @hide
+         */
+        public static final String SCREENSHOT_SOUND = "screenshot_sound";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
