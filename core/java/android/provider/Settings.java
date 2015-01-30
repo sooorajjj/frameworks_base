@@ -3457,6 +3457,18 @@ public final class Settings {
          * @hide
          */
         public static final String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";
+		
+	    /**
+         * Navigation bar height when it is on protrait
+         * @hide
+         */
+        public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+ 
+          /**
+          * Navigation bar height when it is on landscape at the right
+          * @hide
+          */
+        public static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
 
         /**
          * Color temperature of the display during the day
