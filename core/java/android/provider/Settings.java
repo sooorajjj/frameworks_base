@@ -6067,6 +6067,12 @@ public final class Settings {
          * @hide
          */
         public static final String LIVE_DISPLAY_COLOR_MATRIX = "live_display_color_matrix";
+		
+		/**
+         * Whether to show four tiles per row.
+         * @hide
+         */
+        public static final String QS_USE_FOUR_COLUMNS = "qs_use_four_columns";
 
         /**
          * Whether to show the lockscreen visualizer.
