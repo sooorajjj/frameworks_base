@@ -3415,7 +3415,7 @@ public final class Settings {
         * @hide
         */
         public static final String DISABLE_FC_NOTIFICATIONS = "disable_fc_notifications";
-		
+
         /**
          * Visibility of SIM icons of unpopulated SIM slots in MSIM mode
          * 0: Hide unpopulated SIM icons
@@ -3484,8 +3484,8 @@ public final class Settings {
          * Locale for secondary overlay on dialer for t9 search input
          * @hide
          */
-        public static final String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";	   
-	   		            
+        public static final String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";
+
         /**
          * Color temperature of the display during the day
          * @hide
@@ -3539,19 +3539,19 @@ public final class Settings {
          * @hide
          */
         public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
- 
+
           /**
           * Navigation bar height when it is on landscape at the right
           * @hide
           */
         public static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
-				
+
 		/**
          * Navigation bar button color
          * @hide
          */
         public static final String NAVIGATION_BAR_TINT = "navigation_bar_tint";
-		
+
 		/**
          * Network traffic indicator, goes from least to greatest significant bitwise
          * 0 = Display up-stream traffic if set
@@ -3579,13 +3579,13 @@ public final class Settings {
          * @hide
          */
         public static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
-		
+
 		/**
          * Enable/Disable screenshot sound
          * @hide
          */
         public static final String SCREENSHOT_SOUND = "screenshot_sound";
-		
+
 	    /**
          * Whether to use gesture anywhere feature.
          * @hide
@@ -3637,10 +3637,10 @@ public final class Settings {
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
         public static final String GESTURE_ANYWHERE_SHOW_TRIGGER = "gesture_anywhere_show_trigger";
 
-        /**  
+        /**
          * AOKP Custom System Animations
          * @hide
-         */  
+         */
         public static final String[] ACTIVITY_ANIMATION_CONTROLS = new String[] {
                 "activity_open",
                 "activity_close",
@@ -3653,7 +3653,7 @@ public final class Settings {
                 "wallpaper_intra_open",
                 "wallpaper_intra_close",
                 "task_open_behind",
-        };  
+        };
         public static final String ANIMATION_CONTROLS_DURATION = "animation_controls_duration";
 
         /**
@@ -3697,7 +3697,59 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_ENABLE_POWER_MENU = "lockscreen_enable_power_menu";
+        /**
+         * Enable/disable overwrite default value for ambient display
+         * @hide
+         */
+        public static final String DOZE_OVERWRITE_VALUE = "doze_overwrite_value";
 
+        /**
+         * Duration in for ambient display
+         * @hide
+         */
+        public static final String DOZE_PULSE_DURATION_IN = "doze_pulse_duration_in";
+
+        /**
+         * Duration visible for ambient display
+         * @hide
+         */
+        public static final String DOZE_PULSE_DURATION_VISIBLE = "doze_pulse_duration_visible";
+
+        /**
+         * Duration out for ambient display
+         * @hide
+         */
+        public static final String DOZE_PULSE_DURATION_OUT = "doze_pulse_duration_out";
+
+        /**
+         * Pulse if there is notifications for ambient display
+         * @hide
+         */
+        public static final String DOZE_PULSE_ON_NOTIFICATIONS = "doze_pulse_on_notifications";
+
+        /**
+         * Shake threshold for ambient display
+         * @hide
+         */
+        public static final String DOZE_SHAKE_ACC_THRESHOLD = "doze_shake_acc_threshold";
+
+        /**
+         * Pocket mode for ambient display
+         * @hide
+         */
+        public static final String DOZE_POCKET_MODE = "doze_pocket_mode";
+
+        /**
+         * Shake mode for ambient display
+         * @hide
+         */
+        public static final String DOZE_SHAKE_MODE = "doze_shake_mode";
+
+        /**
+         * Time mode for ambient display
+         * @hide
+         */
+        public static final String DOZE_TIME_MODE = "doze_time_mode";
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
@@ -6241,7 +6293,7 @@ public final class Settings {
          * @hide
          */
         public static final String LIVE_DISPLAY_COLOR_MATRIX = "live_display_color_matrix";
-		
+
 		/**
          * Whether to show four tiles per row.
          * @hide
