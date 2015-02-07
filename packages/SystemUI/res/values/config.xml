@@ -266,6 +266,9 @@
 
     <!-- Doze: pulse parameter - how long does it take to fade out? -->
     <integer name="doze_pulse_duration_out">1000</integer>
+	
+	<!-- Doze: shake accelerometer threshold minimum is 2 and maximum is 10-->
+    <integer name="doze_shake_accelerometer_threshold">10</integer>
 
     <!-- Doze: alpha to apply to small icons when dozing -->
     <integer name="doze_small_icon_alpha">222</integer><!-- 87% of 0xff -->

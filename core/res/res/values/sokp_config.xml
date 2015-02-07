@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-/* //device/apps/common/assets/res/any/strings.xml
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+** Not a Contribution.
 **
-** Copyright 2014, Euphoria-OS project
+** Copyright 2014, Euphoria-OS Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -18,10 +19,8 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    
-    <!-- Quick settings Custom Tiles-->
-    <string name="quick_settings_screenshot">ScreenShot</string>
-	<string name="quick_settings_sync">Sync</string>
-    <string name="quick_settings_sync_off">Sync off</string>
 
+    <!-- Doze: force using accelerometer as pick up sensor -->
+    <bool name="config_dozeUseAccelerometer">false</bool>
+	
 </resources>
