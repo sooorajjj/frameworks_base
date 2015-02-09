@@ -20,12 +20,13 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     
     <!-- Quick settings Custom Tiles-->
-	<string name="quick_settings_battery_saver">Battery saver</string>
-    <string name="quick_settings_battery_saver_off">Battery saver off</string>
+	<string name="quick_settings_battery_saver">Battery Saver</string>
+    <string name="quick_settings_battery_saver_off">Battery Saver Off</string>
 	<string name="quick_settings_brightness">Brightness</string>
-	<string name="quick_settings_screen_off">Screen off</string>
+	<string name="quick_settings_expanded_desktop">Expanded</string>
+	<string name="quick_settings_screen_off">Screen Off</string>
     <string name="quick_settings_screenshot">ScreenShot</string>
 	<string name="quick_settings_sync">Sync</string>
-    <string name="quick_settings_sync_off">Sync off</string>
+    <string name="quick_settings_sync_off">Sync Off</string>
 
 </resources>
