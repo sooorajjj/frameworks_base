@@ -23,7 +23,10 @@
 	<string name="quick_settings_battery_saver">Battery Saver</string>
     <string name="quick_settings_battery_saver_off">Battery Saver Off</string>
 	<string name="quick_settings_brightness">Brightness</string>
+	<string name="quick_settings_doze">Doze enabled</string>
+    <string name="quick_settings_doze_off">Doze disabled</string>
 	<string name="quick_settings_expanded_desktop">Expanded</string>
+	<string name="quick_settings_expanded_desktop_off">Normal</string>
 	<string name="quick_settings_screen_off">Screen Off</string>
     <string name="quick_settings_screenshot">ScreenShot</string>
 	<string name="quick_settings_sync">Sync</string>
