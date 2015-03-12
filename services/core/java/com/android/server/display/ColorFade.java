@@ -469,7 +469,6 @@ final class ColorFade {
                 st.getTransformMatrix(mTexMatrix);
             } finally {
                 s.release();
-                st.release();
             }
 
             // Set up texture coordinates for a quad.
