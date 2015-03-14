@@ -6134,7 +6134,7 @@ public final class Settings {
             SLEEP_TIMEOUT,
             PRIVACY_GUARD_DEFAULT,
             ADVANCED_REBOOT,
-			STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD
+			STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD,
             DEVELOPMENT_SHORTCUT            
         };
 
