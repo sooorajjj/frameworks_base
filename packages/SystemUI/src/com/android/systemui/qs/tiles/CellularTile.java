@@ -71,7 +71,7 @@ public class CellularTile extends QSTile<QSTile.SignalState> {
     public QSTileView createTileView(Context context) {
         return new SignalTileView(context);
     }
-
+	
     @Override
     protected void handleClick() {
         if (mController.isMobileDataSupported()) {
@@ -81,9 +81,15 @@ public class CellularTile extends QSTile<QSTile.SignalState> {
         }
     }
 
+	@Override
+     protected void handleSecondaryClick() {
+	     mHost.startSettingsActivity(new Intent(Settings.ACTION_DATA_ROAMING_SETTINGS));
+	 
+     }
+	
     @Override
     protected void handleLongClick() {
-        mHost.startSettingsActivity(WIRELESS_SETTINGS);
+        mHost.startSettingsActivity(new Intent(Settings.ACTION_DATA_ROAMING_SETTINGS));
     }
 
     @Override
