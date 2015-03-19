@@ -64,7 +64,6 @@ public class HotspotTile extends QSTile<QSTile.BooleanState> {
     protected void handleClick() {
         final boolean isEnabled = (Boolean) mState.value;
         mController.setHotspotEnabled(!isEnabled);
-		qsCollapsePanel();
     }
 
     @Override
