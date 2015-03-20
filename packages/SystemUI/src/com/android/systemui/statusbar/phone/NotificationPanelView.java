@@ -423,11 +423,6 @@ public class NotificationPanelView extends PanelView implements
         requestLayout();
     }
 
-    private boolean isQSEventBlocked() {
-        return mLockPatternUtils.isSecure()
-            && mStatusBarLockedOnSecureKeyguard && mKeyguardShowing;
-    }
-	
     public void setQsExpansionEnabled(boolean qsExpansionEnabled) {
         mQsExpansionEnabled = qsExpansionEnabled && !isQSEventBlocked();
         mHeader.setClickable(qsExpansionEnabled);
