@@ -52,7 +52,6 @@ public class QSConstants {
     public static final String TILE_BATTERY_SAVER = "battery_saver";
     public static final String TILE_SCREEN_OFF = "screen_off";
     public static final String TILE_EXPANDED_DESKTOP = "expanded_desktop";
-    public static final String TILE_AMBIENT_DISPLAY = "ambient_display";
     public static final String TILE_REBOOT = "reboot";
 
     // Order matters
@@ -96,7 +95,6 @@ public class QSConstants {
         TILES_AVAILABLE.add(TILE_BATTERY_SAVER);
         TILES_AVAILABLE.add(TILE_SCREEN_OFF);
         TILES_AVAILABLE.add(TILE_EXPANDED_DESKTOP);
-        TILES_AVAILABLE.add(TILE_AMBIENT_DISPLAY);
         TILES_AVAILABLE.add(TILE_REBOOT);
     }
 }
