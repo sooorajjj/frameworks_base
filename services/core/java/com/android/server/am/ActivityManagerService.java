@@ -1227,7 +1227,7 @@ public final class ActivityManagerService extends ActivityManagerNative
                 TAG, "Death received in " + this
                 + " for thread " + mAppThread.asBinder());
             synchronized(ActivityManagerService.this) {
-                appDiedLocked(mApp, mPid, mAppThread);
+                appDiedLocked(mApp, mPid, mAppThread, true);
             }
         }
     }
@@ -3232,6 +3232,21 @@ public final class ActivityManagerService extends ActivityManagerNative
         return true;
     }
 
+    /**
+     * If system is power off alarm boot mode, we need to start the alarm alert
+     * view here, to trigger the power off alarm UI.
+     */
+    void startAlarmActivityLocked() {
+        ComponentName compenentName = new ComponentName("com.android.deskclock",
+                "com.android.deskclock.alarms.AlarmActivity");
+
+        Intent intent = new Intent();
+        intent.setComponent(compenentName);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("ro.alarm_boot", true);
+        mContext.startActivityAsUser(intent, UserHandle.CURRENT);
+    }
+
     private ActivityInfo resolveActivityInfo(Intent intent, int flags, int userId) {
         ActivityInfo ai = null;
         ComponentName comp = intent.getComponent();
@@ -4764,10 +4779,11 @@ public final class ActivityManagerService extends ActivityManagerNative
     }
 
     final void appDiedLocked(ProcessRecord app) {
-       appDiedLocked(app, app.pid, app.thread);
+       appDiedLocked(app, app.pid, app.thread, false);
     }
 
-    final void appDiedLocked(ProcessRecord app, int pid, IApplicationThread thread) {
+    final void appDiedLocked(ProcessRecord app, int pid, IApplicationThread thread,
+            boolean fromBinderDied) {
         // First check if this ProcessRecord is actually active for the pid.
         synchronized (mPidsSelfLocked) {
             ProcessRecord curProc = mPidsSelfLocked.get(pid);
@@ -4783,7 +4799,9 @@ public final class ActivityManagerService extends ActivityManagerNative
         }
 
         if (!app.killed) {
-            Process.killProcessQuiet(pid);
+            if (!fromBinderDied) {
+                Process.killProcessQuiet(pid);
+            }
             Process.killProcessGroup(app.info.uid, pid);
             app.killed = true;
         }
@@ -11478,6 +11496,15 @@ public final class ActivityManagerService extends ActivityManagerNative
             mBooting = true;
             startHomeActivityLocked(mCurrentUserId, "systemReady");
 
+            // start the power off alarm by boot mode
+            boolean isAlarmBoot = SystemProperties.getBoolean("ro.alarm_boot", false);
+            if (isAlarmBoot) {
+                if (DEBUG) {
+                    Slog.i(TAG, "ActivityManagerService systemReady isAlarmBoot = " + isAlarmBoot);
+                }
+                startAlarmActivityLocked();
+            }
+
             try {
                 if (AppGlobals.getPackageManager().hasSystemUidErrors()) {
                     Slog.e(TAG, "UIDs on the system are inconsistent, you need to wipe your"
@@ -11521,6 +11548,7 @@ public final class ActivityManagerService extends ActivityManagerNative
             }
             mStackSupervisor.resumeTopActivitiesLocked();
             sendUserSwitchBroadcastsLocked(-1, mCurrentUserId);
+            performGcsForAllLocked();
         }
     }
 
@@ -17902,7 +17930,25 @@ public final class ActivityManagerService extends ActivityManagerNative
             scheduleAppGcsLocked();
         }
     }
-    
+
+    /**
+     * Perform GCs on all processes, we only call it one time when system ready
+     */
+    final void performGcsForAllLocked() {
+        final ArrayMap<String, SparseArray<ProcessRecord>> map = mProcessNames.getMap();
+        int mapSize = map.size();
+        ProcessRecord proc = null;
+        for (int i = 0; i < mapSize; i++) {
+            String name = map.keyAt(i);
+            SparseArray<ProcessRecord> array = map.get(name);
+            for (int j = 0; j < array.size(); j++) {
+                proc = array.valueAt(j);
+                performAppGcLocked(proc);
+
+            }
+        }
+    }
+
     /**
      * If all looks good, perform GCs on all processes waiting for them.
      */
